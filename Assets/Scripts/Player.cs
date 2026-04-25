@@ -3,29 +3,24 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 7f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    // Update is called once per frame
+    [SerializeField] private float rotateSpeed = 10f;
+    [SerializeField] private GameInput gameInput;
+    private bool isWalking;
+    
     private void Update()
     {
-        Vector3 inputVector = new Vector3(0, 0, 0);
-        if (Input.GetKey(KeyCode.W))
+        Vector2 inputVector = gameInput.GetNormalizedMovementVector();
+        Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
+        transform.position += moveDir * moveSpeed * Time.deltaTime;
+        isWalking = inputVector != Vector2.zero;
+        if (inputVector != Vector2.zero)
         {
-            inputVector.z = +1;
+            transform.forward = Vector3.Slerp(transform.forward, moveDir, rotateSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            inputVector.z = -1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputVector.x = -1;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            inputVector.x = +1;
-        }
-        inputVector = inputVector.normalized;
-        transform.position += inputVector * moveSpeed * Time.deltaTime;
+    }
+
+    public bool IsWalking()
+    {
+        return isWalking;
     }
 }
