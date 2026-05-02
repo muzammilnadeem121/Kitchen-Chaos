@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 4164725256878805354}
   - {fileID: 5495369142046610864}
+  - {fileID: 6510710594068686066}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &3787460610433848887
@@ -68,6 +69,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204d07da628be8745b1fc48b9b590bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClearCounter
+  kitchenObjectSO: {fileID: 0}
+  counterTopPoint: {fileID: 6510710594068686066}
+  secondClearCounter: {fileID: 0}
+  testing: 1
+--- !u!1 &3998128833052940515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6510710594068686066}
+  m_Layer: 3
+  m_Name: ClearCounter Top
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6510710594068686066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3998128833052940515}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8345072770777712964}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &467776819193886145
 PrefabInstance:
   m_ObjectHideFlags: 0
